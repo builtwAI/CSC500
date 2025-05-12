@@ -1,0 +1,33 @@
+#Create a class called ItemToPurchase that has the following attributes:
+# item_name (string)    - name of the item
+# item_price (float)   - price of the item      
+# item_quantity (int)  - quantity of the item
+class ItemToPurchase:
+    def _initialize_(thing):
+        thing.item_name = "none"
+        thing.item_price = 0.0
+        thing.item_quantity = 0
+
+    def print_item_cost(thing):
+        total_cost = thing.item_price * thing.item_quantity
+        print(f"{thing.item_name} {thing.item_quantity} @ ${int(thing.item_price)} = ${int(total_cost)}")
+
+# Get the item details from the user
+print("Item 1")
+item1 = ItemToPurchase()
+item1.item_name = input("Enter the item name:\n")
+item1.item_price = float(input("Enter the item price:\n"))
+item1.item_quantity = int(input("Enter the item quantity:\n"))
+
+print("\nItem 2")
+item2 = ItemToPurchase()
+item2.item_name = input("Enter the item name:\n")
+item2.item_price = float(input("Enter the item price:\n"))
+item2.item_quantity = int(input("Enter the item quantity:\n"))
+
+# Output the total cost
+print("\nTOTAL COST")
+item1.print_item_cost()
+item2.print_item_cost()
+total = (item1.item_price * item1.item_quantity) + (item2.item_price * item2.item_quantity)
+print(f"\nTotal: ${int(total)}")
