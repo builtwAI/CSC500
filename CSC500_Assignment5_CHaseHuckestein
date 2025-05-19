@@ -1,0 +1,31 @@
+def calculate_average_rainfall():
+    #Calculates the average rainfall over a period of years.
+
+    num_years = int(input("Enter the number of years: "))
+    total_rainfall = 0
+    total_months = 0
+
+    for year in range(1, num_years + 1):
+        print(f"\n Year {year} ")
+        for month in range(1, 13):
+            while True:
+                try:
+                    rainfall = float(input(f"Enter the rainfall (in inches) for month {month}: "))
+                    if rainfall >= 0:
+                        total_rainfall += rainfall
+                        total_months += 1
+                        break
+                    else:
+                        print("Rainfall cannot be negative. Please enter a valid amount.")
+                except ValueError:
+                    print("Invalid input. Please enter a numeric value for rainfall.")
+
+    if total_months > 0:
+        average_rainfall = total_rainfall / total_months
+        print(f"\nRainfall Summary:")
+        print(f"Total number of months: {total_months}")
+        print(f"Total rainfall: {total_rainfall:.2f} inches")
+        print(f"Average rainfall per month: {average_rainfall:.2f} inches")
+    else:
+        print("No rainfall data was entered.")
+calculate_average_rainfall()
