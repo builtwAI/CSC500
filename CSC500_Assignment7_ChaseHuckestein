@@ -1,0 +1,50 @@
+def course_lookup():
+    """
+    Creates dictionaries for course information (room, instructor, time)
+    and allows the user to look up course details by course number.
+    """
+
+    # Dictionary for course numbers and room numbers
+    room_numbers = {
+        "CSC101": "3004",
+        "CSC102": "4501",
+        "CSC103": "6755",
+        "NET110": "1244",
+        "COM241": "1411"
+    }
+
+    # Dictionary for course numbers and instructors
+    instructors = {
+        "CSC101": "Haynes",
+        "CSC102": "Alvarado",
+        "CSC103": "Rich",
+        "NET110": "Burke",
+        "COM241": "Lee"
+    }
+
+    # Dictionary for course numbers and meeting times
+    meeting_times = {
+        "CSC101": "8:00 a.m.",
+        "CSC102": "9:00 a.m.",
+        "CSC103": "10:00 a.m.",
+        "NET110": "11:00 a.m.",
+        "COM241": "1:00 p.m."
+    }
+
+    while True:
+        course_number = input("Enter a course number (e.g., CSC101) or 'q' to quit: ").upper()
+
+        if course_number == 'Q':
+            break
+
+        if course_number in room_numbers:
+            print(f"\nCourse Number: {course_number}")
+            print(f"Room Number: {room_numbers[course_number]}")
+            print(f"Instructor: {instructors[course_number]}")
+            print(f"Meeting Time: {meeting_times[course_number]}")
+        else:
+            print("Course number not found. Please try again.")
+        print("-" * 30) # Separator for better readability
+
+if __name__ == "__main__":
+    course_lookup()
